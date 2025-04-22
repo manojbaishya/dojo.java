@@ -44,7 +44,8 @@ class PolynomialTests {
         var polynomial = new Polynomial(new double[] {6, 5, 8, 32});
 
         Complex[] expectedFft = new Complex[] {Complex.ofCartesian(51, 0), Complex.ofCartesian(-2, -27), Complex.ofCartesian(-23, 0), Complex.ofCartesian(-2, 27)};
-        Complex[] actualFft = polynomial.computeFft();
+        polynomial.computeFft();
+        Complex[] actualFft = polynomial.getFFT();
 
         assertEquals(expectedFft.length, actualFft.length);
         for (int i = 0; i < expectedFft.length; i++) {
