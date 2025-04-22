@@ -57,5 +57,4 @@ public class Polynomial {
         }
         return polynomial.toString();
     }
-
 }

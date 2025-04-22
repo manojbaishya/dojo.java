@@ -18,7 +18,6 @@ class PolynomialTests {
 
         System.out.printf("Expected Polynomial is: '%s'\n", Arrays.stream(expectedFft).map(Complex::toString).reduce((x, y) -> String.format("%s, %s", x, y)));
         System.out.printf("Actual Polynomial is: '%s'\n", Arrays.stream(actualFft).map(Complex::toString).reduce((x, y) -> String.format("%s, %s", x, y)));
-
     }
 
     @Test
