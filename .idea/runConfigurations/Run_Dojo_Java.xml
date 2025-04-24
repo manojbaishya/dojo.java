@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run Dojo.Java" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="org.github.Dojo" />
+    <option name="MAIN_CLASS_NAME" value="org.dojo.Dojo" />
     <module name="dojo.java" />
     <method v="2">
       <option name="Make" enabled="true" />

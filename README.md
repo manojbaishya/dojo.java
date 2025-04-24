@@ -146,7 +146,7 @@ Computer Science problems in Java.
 - LeetCode: Sort by difficulty or tags (arrays, DP). and contests
 - HackerRank: For warm-ups and hiring contests.
 
-✅ Master Core Algorithms and Data Structures (WEEKS 13-16)
+✅ Master Core Algorithms and Data Structures (WEEKS 13–16)
 
 🎯Key Focus Areas:
 - Binary Search: Search in rotated arrays, peak elements.

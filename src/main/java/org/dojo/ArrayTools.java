@@ -1,4 +1,4 @@
-package org.github;
+package org.dojo;
 
 import java.util.List;
 

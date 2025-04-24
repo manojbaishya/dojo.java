@@ -1,4 +1,4 @@
-package org.github;
+package org.dojo;
 
 import org.apache.commons.numbers.complex.Complex;
 import org.junit.jupiter.api.Test;
