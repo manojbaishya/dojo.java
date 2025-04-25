@@ -69,8 +69,7 @@ public class EasyProblems {
         return sum;
     }
 
-    public String longestCommonPrefix(String[] strs)
-    {
+    public String longestCommonPrefix(String[] strs) {
         Arrays.sort(strs);
         String first = strs[0];
         String last = strs[strs.length - 1];
@@ -88,13 +87,12 @@ public class EasyProblems {
         int i = m - 1;
         int j = n - 1;
 
-        while(i >= 0 && j >= 0) {
+        while (i >= 0 && j >= 0) {
             if (nums1[i] > nums2[j]) {
                 nums1[k] = nums1[i];
                 k--;
                 i--;
-            }
-            else {
+            } else {
                 nums1[k] = nums2[j];
                 k--;
                 j--;
