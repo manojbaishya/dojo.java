@@ -8,6 +8,7 @@ Computer Science problems in Java.
 * https://github.com/eclipse-collections/eclipse-collections — Eclipse Collections is a collections framework for Java with optimized data structures and a rich, functional and fluent API.
 * https://github.com/j-easy/easy-batch — Batch framework for Java
 * https://github.com/vavr-io/vavr — Object-functional extension for Java
+* https://github.com/EsotericSoftware/kryo — Java binary serialization and cloning
 
 ## Question Bank
 𝗔𝗿𝗿𝗮𝘆𝘀 𝗮𝗻𝗱 𝗦𝘁𝗿𝗶𝗻𝗴𝘀:
