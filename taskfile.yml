@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - mvn --batch-mode clean verify
+  test:
+    cmds:
+      - mvn --batch-mode test
