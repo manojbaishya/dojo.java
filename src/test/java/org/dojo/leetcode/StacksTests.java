@@ -1,6 +1,5 @@
 package org.dojo.leetcode;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -9,6 +8,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StacksTests {
     private final Stacks sut = new Stacks();
@@ -48,5 +48,21 @@ class StacksTests {
         boolean actual = sut.isValid(s);
         System.out.printf("Expected: %s, Actual: %s\n", expected, actual);
         assert expected == actual;
+    }
+
+    public static Stream<Arguments> reversePrefixData() {
+        return Stream.of(
+                Arguments.of("abcdefd", 'd', "dcbaefd"),
+                Arguments.of("xyxzxe", 'z', "zxyxxe"),
+                Arguments.of("abcd", 'z', "abcd")
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("reversePrefixData")
+    void reversePrefix(String word, char ch, String expected) {
+        String actual = sut.reversePrefix(word, ch);
+        System.out.printf("Input: \"%s\", '%c' => Expected: \"%s\", Actual: \"%s\"\n", word, ch, expected, actual);
+        assertEquals(expected, actual);
     }
 }
