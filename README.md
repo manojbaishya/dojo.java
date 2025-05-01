@@ -2,6 +2,7 @@ Computer Science problems in Java.
 
 ### Migration status - dojo.net
 1. ArrayProblems.cs + ArrayProblemsTests.cs [WIP]
+2. Add Checker Framework - Clashes with Java Microbenchmark Harness annotation processor
 
 ## Backlog
 ### Problems
