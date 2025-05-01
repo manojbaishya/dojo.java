@@ -9,8 +9,8 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class StackTests {
-    private final Stack sut = new Stack();
+class StacksTests {
+    private final Stacks sut = new Stacks();
 
     static Stream<Arguments> asteroidCollisionProvider() {
         return Stream.of(

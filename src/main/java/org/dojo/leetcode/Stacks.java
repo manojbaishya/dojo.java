@@ -3,7 +3,7 @@ package org.dojo.leetcode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Stack {
+public class Stacks {
     public int[] asteroidCollision(int[] asteroids) {
         Deque<Integer> stack = new ArrayDeque<>(asteroids.length);
 
