@@ -2,6 +2,7 @@ package org.dojo.leetcode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Iterator;
 
 public class Stacks {
     public int[] asteroidCollision(int[] asteroids) {
@@ -69,5 +70,30 @@ public class Stacks {
             }
         }
         return word;
+    }
+
+    public int calPoints(String[] operations) {
+        Deque<Integer> stack = new ArrayDeque<>(operations.length);
+        for (String op : operations) {
+            switch(op) {
+                case "+":
+                    int sum = 0;
+                    Iterator<Integer> ptr = stack.iterator();
+                    if (ptr.hasNext()) sum += ptr.next();
+                    if (ptr.hasNext()) sum += ptr.next();
+                    stack.push(sum);
+                    break;
+                case "D":
+                    if (!stack.isEmpty()) stack.push(stack.peek() * 2);
+                    break;
+                case "C":
+                    if (!stack.isEmpty()) stack.pop();
+                    break;
+                default:
+                    stack.push(Integer.parseInt(op));
+            }
+        }
+
+        return stack.stream().mapToInt(i -> i).sum();
     }
 }

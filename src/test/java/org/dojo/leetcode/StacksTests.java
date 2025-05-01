@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StacksTests {
     private final Stacks sut = new Stacks();
 
-
     static Stream<Arguments> asteroidCollisionProvider() {
         return Stream.of(
                 Arguments.of(new int[] {5, 10, -5}, new int[] {5, 10}),
@@ -64,5 +63,19 @@ class StacksTests {
         String actual = sut.reversePrefix(word, ch);
         System.out.printf("Input: \"%s\", '%c' => Expected: \"%s\", Actual: \"%s\"\n", word, ch, expected, actual);
         assertEquals(expected, actual);
+    }
+
+    private static Stream<Arguments> testCalPointsData() {
+        return Stream.of(
+                Arguments.of(new String[] {"5", "2", "C", "D", "+"}, 30),
+                Arguments.of(new String[] {"5", "-2", "4", "C", "D", "9", "+", "+"}, 27),
+                Arguments.of(new String[] {"1", "C"}, 0)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("testCalPointsData")
+    public void testCalPoints(String[] operations, int expected) {
+        assertEquals(expected, sut.calPoints(operations));
     }
 }
