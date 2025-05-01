@@ -1,6 +1,6 @@
 package org.dojo;
 
-import org.dojo.leetcode.Profiler;
+import org.dojo.leetcode.EasyProblemsProfiler;
 
 import java.io.IOException;
 
@@ -16,6 +16,6 @@ public class Dojo {
         Benchmarks.run(args);
 
         // Code profiling using Java Flight Recorder
-        Profiler.run();
+        EasyProblemsProfiler.run();
     }
 }

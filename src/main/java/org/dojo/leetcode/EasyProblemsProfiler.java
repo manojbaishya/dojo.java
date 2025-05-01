@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Profiler Demo
+ * EasyProblemsProfiler Demo
  */
-public class Profiler {
+public class EasyProblemsProfiler {
     public static void run() {
-        var profiler = new Profiler();
+        var profiler = new EasyProblemsProfiler();
         var _ = profiler.romanToInt();
         var _ = profiler.longestCommonPrefix();
     }

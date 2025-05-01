@@ -31,7 +31,7 @@ class EasyProblemsTests {
         assertEquals(expected, actual);
     }
 
-    public static Stream<Arguments> longestCommonPrefixData() {
+    static Stream<Arguments> longestCommonPrefixData() {
         return Stream.of(
                 Arguments.of(new String[] {"flower", "flow", "flight"}, "fl"),
                 Arguments.of(new String[] {"dog", "racecar", "car"}, "")
@@ -46,7 +46,7 @@ class EasyProblemsTests {
         assertEquals(expected, actual);
     }
 
-    public static Stream<Arguments> mergeSortedArraysData() {
+    static Stream<Arguments> mergeSortedArraysData() {
         return Stream.of(
                 Arguments.of(new int[] {1, 2, 3, 0, 0, 0}, 3, new int[] {2, 5, 6}, 3, new int[] {1, 2, 2, 3, 5, 6})
         );
