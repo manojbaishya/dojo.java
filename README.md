@@ -1,6 +1,6 @@
 Computer Science problems in Java.
 
-### Migration status - dojo.net — Done ✅
+## Migration status - dojo.net — Done ✅
 
 ## Important and Useful LibrariesX
 * JDK Standard Library — https://docs.oracle.com/en/java/javase/24/docs/api/index.html
