@@ -17,25 +17,17 @@ public class Stacks {
                 continue;
             }
 
-            if (Math.signum(stack.peek()) != sign) {
-                if (Math.signum(stack.peek()) > sign) {
-                    while (!stack.isEmpty() && Math.signum(stack.peek()) > sign) {
-                        int top = stack.peek();
-
-                        if (Math.abs(top) > Math.abs(num)) break;
-
-                        if (Math.abs(top) == Math.abs(num)) {
-                            stack.pop();
-                            break;
-                        } else if (Math.abs(top) < Math.abs(num)) {
-                            stack.pop();
-
-                            if (stack.isEmpty()) stack.push(num);
-                            else if (Math.signum(stack.peek()) <= sign) stack.push(num);
-                        }
+            if (Math.signum(stack.peek()) > sign) {
+                while (!stack.isEmpty() && Math.signum(stack.peek()) > sign) {
+                    if (Math.abs(stack.peek()) > Math.abs(num)) break;
+                    if (Math.abs(stack.peek()) == Math.abs(num)) {
+                        stack.pop();
+                        break;
                     }
-                } else {
-                    stack.push(num);
+                    if (Math.abs(stack.peek()) < Math.abs(num)) {
+                        stack.pop();
+                        if (stack.isEmpty() || Math.signum(stack.peek()) <= sign) stack.push(num);
+                    }
                 }
             } else {
                 stack.push(num);
