@@ -1,8 +1,44 @@
 Computer Science problems in Java.
 
 ### Migration status - dojo.net
-1. ArrayProblems.cs + ArrayProblemsTests.cs [WIP]
-2. Add Checker Framework - Clashes with Java Microbenchmark Harness annotation processor
+Combine single method classes in one file
+1. TwoSum.cs [WIP]
+2. BasicMaths.cs [WIP]
+3. GiftingGroups.cs [WIP]
+4. Hashing.cs [WIP]
+5. ItemsInContainers.cs [WIP]
+6. LongestSubstringWithoutRepeatingCharacters.cs [WIP]
+7. MedianOfTwoSortedArrays.cs [WIP]
+8. OptimizingBoxWeights.cs [WIP]
+9. PatternsIterationsAndConditionals.cs [WIP]
+10. Recursion.cs [WIP]
+11. SlidingWindow.cs [WIP]
+
+## Important and Useful Libraries
+* JDK Standard Library — https://docs.oracle.com/en/java/javase/24/docs/api/index.html
+* Checker Framework — https://checkerframework.org/manual/
+  * Nullness Checker example — https://checkerframework.org/tutorial/webpages/get-started-cmd.html
+  * Regex Checker — https://checkerframework.org/tutorial/webpages/user-input-cmd.html
+* Apache Commons Lang — https://commons.apache.org/components.html
+  * Lang3 Utilities — https://commons.apache.org/proper/commons-lang/javadocs/api-release/index.html
+  * Collections
+    * User Guide — https://commons.apache.org/proper/commons-collections/userguide.html
+    * Javadoc — https://commons.apache.org/proper/commons-collections/apidocs/index.html
+  * Text — https://commons.apache.org/proper/commons-text/userguide.html
+  * IO — https://commons.apache.org/proper/commons-io/
+  * CSV — https://commons.apache.org/proper/commons-csv/apidocs/index.html
+  * Configuration — https://commons.apache.org/proper/commons-configuration/userguide/user_guide.html
+  * Math — https://commons.apache.org/proper/commons-math/userguide/index.html
+  * Numbers — https://commons.apache.org/proper/commons-numbers/userguide/index.html
+  * Statistics — https://commons.apache.org/proper/commons-math/userguide/stat.html
+  * Geometry — https://commons.apache.org/proper/commons-geometry/userguide/index.html
+* Java Datafaker — https://s01.oss.sonatype.org/service/local/repositories/releases/archive/net/datafaker/datafaker/2.4.2/datafaker-2.4.2-javadoc.jar/!/index.html
+* Guava: Google Core Libraries — https://guava.dev/releases/snapshot-jre/api/docs/
+* Agrona: High-Performance data structures and utility methods for Java — https://github.com/aeron-io/agrona
+* Eclipse Collections is a collections framework for Java with optimized data structures and a rich, functional, and fluent API. — https://github.com/eclipse-collections/eclipse-collections
+* Batch framework for Java — https://github.com/j-easy/easy-batch
+* Object-functional extension for Java — https://github.com/vavr-io/vavr
+* Java binary serialization and cloning — https://github.com/EsotericSoftware/kryo
 
 ## Backlog
 ### Problems
@@ -211,14 +247,3 @@ Computer Science problems in Java.
 - Big Interview (Behavioral Prep):
   Comprehensive practice.
 - Google common behavioral interview questions.
-
-
-## Important and Useful Libraries
-* https://s01.oss.sonatype.org/service/local/repositories/releases/archive/net/datafaker/datafaker/2.4.2/datafaker-2.4.2-javadoc.jar/!/index.html — Java Datafaker
-* https://commons.apache.org/components.html — Apache Commons Lang
-* https://guava.dev/releases/snapshot-jre/api/docs/ — Guava: Google Core Libraries
-* https://github.com/aeron-io/agrona — High Performance data structures and utility methods for Java
-* https://github.com/eclipse-collections/eclipse-collections — Eclipse Collections is a collections framework for Java with optimized data structures and a rich, functional and fluent API.
-* https://github.com/j-easy/easy-batch — Batch framework for Java
-* https://github.com/vavr-io/vavr — Object-functional extension for Java
-* https://github.com/EsotericSoftware/kryo — Java binary serialization and cloning

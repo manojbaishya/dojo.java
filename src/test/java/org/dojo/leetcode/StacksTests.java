@@ -78,4 +78,31 @@ class StacksTests {
     public void testCalPoints(String[] operations, int expected) {
         assertEquals(expected, sut.calPoints(operations));
     }
+
+    private static Stream<Arguments> minOperationsData() {
+        return Stream.of(
+                Arguments.of(new String[] {"d1/", "d2/", "../", "d21/", "./"}, 2),
+                Arguments.of(new String[] {"d1/", "d2/", "./", "d3/", "../", "d31/"}, 3),
+                Arguments.of(new String[] {"d1/", "../", "../", "../"}, 0)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("minOperationsData")
+    public void minOperations(String[] logs, int expected) {
+        assertEquals(expected, sut.minOperations(logs));
+    }
+
+    private static Stream<Arguments> countStudentsData() {
+        return Stream.of(
+                // Arguments.of(new int[] {1, 1, 0, 0}, new int[] {0, 1, 0, 1}, 0),
+                Arguments.of(new int[] {1, 1, 1, 0, 0, 1}, new int[] {1, 0, 0, 0, 1, 1}, 3)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("countStudentsData")
+    public void countStudents(int[] students, int[] sandwiches, int expected) {
+        assertEquals(expected, sut.countStudents(students, sandwiches));
+    }
 }

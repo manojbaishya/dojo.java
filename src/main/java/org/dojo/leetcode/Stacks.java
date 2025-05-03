@@ -3,6 +3,7 @@ package org.dojo.leetcode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Stacks {
     public int[] asteroidCollision(int[] asteroids) {
@@ -75,7 +76,7 @@ public class Stacks {
     public int calPoints(String[] operations) {
         Deque<Integer> stack = new ArrayDeque<>(operations.length);
         for (String op : operations) {
-            switch(op) {
+            switch (op) {
                 case "+":
                     int sum = 0;
                     Iterator<Integer> ptr = stack.iterator();
@@ -95,5 +96,40 @@ public class Stacks {
         }
 
         return stack.stream().mapToInt(i -> i).sum();
+    }
+
+    public int minOperations(String[] logs) {
+        Deque<String> folderState = new ArrayDeque<>(logs.length);
+
+        for (String log : logs) {
+            switch (log) {
+                case "./":
+                    break;
+                case "../":
+                    if (!folderState.isEmpty()) folderState.pop();
+                    break;
+                default:
+                    folderState.push(log);
+            }
+        }
+
+        return folderState.size();
+    }
+
+    public int countStudents(int[] students, int[] sandwiches) {
+        Deque<Integer> studentQueue = new ArrayDeque<>(students.length);
+        for (int student : students) studentQueue.offer(student);
+
+        Deque<Integer> sandwichQueue = new ArrayDeque<>(sandwiches.length);
+        for (int sandwich : sandwiches) sandwichQueue.offer(sandwich);
+
+        // TODO: Change loop termination condition of the simulation
+        for (int i = 0; i < students.length; i++) {
+            if (Objects.equals(sandwichQueue.peek(), studentQueue.peek())) {
+                sandwichQueue.poll();
+                studentQueue.poll();
+            } else studentQueue.offer(studentQueue.poll());
+        }
+        return studentQueue.size();
     }
 }
