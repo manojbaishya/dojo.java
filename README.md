@@ -1,15 +1,6 @@
 Computer Science problems in Java.
 
-### Migration status - dojo.net
-Combine single method classes in one file
-1. GiftingGroups.cs [WIP]
-2. ItemsInContainers.cs [WIP]
-3. LongestSubstringWithoutRepeatingCharacters.cs [WIP]
-4. MedianOfTwoSortedArrays.cs [WIP]
-5. OptimizingBoxWeights.cs [WIP]
-6. PatternsIterationsAndConditionals.cs [WIP]
-7. Recursion.cs [WIP]
-8. SlidingWindow.cs [WIP]
+### Migration status - dojo.net — Done ✅
 
 ## Important and Useful LibrariesX
 * JDK Standard Library — https://docs.oracle.com/en/java/javase/24/docs/api/index.html
