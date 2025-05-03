@@ -2,19 +2,16 @@ Computer Science problems in Java.
 
 ### Migration status - dojo.net
 Combine single method classes in one file
-1. TwoSum.cs [WIP]
-2. BasicMaths.cs [WIP]
-3. GiftingGroups.cs [WIP]
-4. Hashing.cs [WIP]
-5. ItemsInContainers.cs [WIP]
-6. LongestSubstringWithoutRepeatingCharacters.cs [WIP]
-7. MedianOfTwoSortedArrays.cs [WIP]
-8. OptimizingBoxWeights.cs [WIP]
-9. PatternsIterationsAndConditionals.cs [WIP]
-10. Recursion.cs [WIP]
-11. SlidingWindow.cs [WIP]
+1. GiftingGroups.cs [WIP]
+2. ItemsInContainers.cs [WIP]
+3. LongestSubstringWithoutRepeatingCharacters.cs [WIP]
+4. MedianOfTwoSortedArrays.cs [WIP]
+5. OptimizingBoxWeights.cs [WIP]
+6. PatternsIterationsAndConditionals.cs [WIP]
+7. Recursion.cs [WIP]
+8. SlidingWindow.cs [WIP]
 
-## Important and Useful Libraries
+## Important and Useful LibrariesX
 * JDK Standard Library — https://docs.oracle.com/en/java/javase/24/docs/api/index.html
 * Checker Framework — https://checkerframework.org/manual/
   * Nullness Checker example — https://checkerframework.org/tutorial/webpages/get-started-cmd.html
