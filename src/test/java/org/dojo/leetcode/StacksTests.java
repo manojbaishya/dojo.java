@@ -99,7 +99,6 @@ class StacksTests {
                 Arguments.of(new int[] {1, 1, 1, 0, 0, 1}, new int[] {1, 0, 0, 0, 1, 1}, 3)
         );
     }
-
     @ParameterizedTest
     @MethodSource("countStudentsData")
     public void countStudents(int[] students, int[] sandwiches, int expected) {

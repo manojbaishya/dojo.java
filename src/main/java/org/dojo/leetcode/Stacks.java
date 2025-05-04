@@ -115,13 +115,17 @@ public class Stacks {
         Deque<Integer> sandwichQueue = new ArrayDeque<>(sandwiches.length);
         for (int sandwich : sandwiches) sandwichQueue.offer(sandwich);
 
-        // TODO: Change loop termination condition of the simulation
-        for (int i = 0; i < students.length; i++) {
+        int rotations = studentQueue.size();
+        do {
             if (Objects.equals(sandwichQueue.peek(), studentQueue.peek())) {
-                sandwichQueue.poll();
-                studentQueue.poll();
-            } else studentQueue.offer(studentQueue.poll());
-        }
+                sandwichQueue.remove();
+                studentQueue.remove();
+                rotations = studentQueue.size();
+            } else {
+                studentQueue.offer(studentQueue.remove());
+                rotations--;
+            }
+        } while (rotations != 0);
         return studentQueue.size();
     }
 }
