@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+@SuppressWarnings("unused")
 public class ArrayProblems {
     private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
@@ -173,8 +174,7 @@ public class ArrayProblems {
         }
 
         if (troughs == 0) return true;
-        if (troughs == 1 && nums[nums.length - 1] <= nums[0]) return true;
-        return false;
+        return troughs == 1 && nums[nums.length - 1] <= nums[0];
     }
 
     public int removeDuplicates(int[] nums) {
@@ -213,17 +213,13 @@ public class ArrayProblems {
         if (k >= nums.length) m = k % nums.length;
         int[] tmp = new int[m];
         int N = nums.length;
-        for (int i = N - m; i < N; i++) {
-            tmp[i - (N - m)] = nums[i];
-        }
+        if (N - (N - m) >= 0) System.arraycopy(nums, N - m, tmp, 0, N - (N - m));
 
         for (int i = N - m - 1; i >= 0; i--) {
             nums[i + m] = nums[i];
         }
 
-        for (int i = 0; i < m; i++) {
-            nums[i] = tmp[i];
-        }
+        System.arraycopy(tmp, 0, nums, 0, m);
     }
 
     public void rotate2(int[] nums, int k) {
@@ -252,7 +248,7 @@ public class ArrayProblems {
     }
 
     public boolean linearSearch(int[] arr, int k) {
-        for (int i = 0; i < arr.length; i++) if (arr[i] == k) return true;
+        for (int j : arr) if (j == k) return true;
         return false;
     }
 
@@ -267,15 +263,15 @@ public class ArrayProblems {
         int N = nums.length;
         int cmpSum = N * (N + 1) / 2;
         int actualSum = 0;
-        for (int i = 0; i < nums.length; i++) actualSum += nums[i];
+        for (int num : nums) actualSum += num;
         return cmpSum - actualSum;
     }
 
     public int findMaxConsecutiveOnes(int[] nums) {
         int S = 0;
         int L = 0;
-        for (int end = 0; end < nums.length; end++) {
-            if (nums[end] == 1) L++;
+        for (int num : nums) {
+            if (num == 1) L++;
             else L = 0;
             if (L != 0) S = Math.max(S, L);
         }
@@ -350,8 +346,8 @@ public class ArrayProblems {
     public void sortColors(int[] nums) {
         int red = 0, white = 0, blue = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            switch (nums[i]) {
+        for (int num : nums) {
+            switch (num) {
                 case 0:
                     red++;
                     break;
@@ -362,7 +358,6 @@ public class ArrayProblems {
                     blue++;
                     break;
                 default:
-                    continue;
             }
         }
 
@@ -400,8 +395,8 @@ public class ArrayProblems {
 
     public int majorityElement(int[] nums) {
         Map<Integer, Integer> freq = new HashMap<>(nums.length);
-        for (int i = 0; i < nums.length; i++) {
-            freq.put(nums[i], freq.getOrDefault(nums[i], 0) + 1);
+        for (int num : nums) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
         }
         for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
             if (entry.getValue() > nums.length / 2) return entry.getKey();
@@ -412,17 +407,17 @@ public class ArrayProblems {
     public int majorityElementMoore(int[] nums) {
         int element = 0, count = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (count == 0) element = nums[i];
+        for (int j : nums) {
+            if (count == 0) element = j;
 
-            if (nums[i] == element) count++;
+            if (j == element) count++;
             else count--;
         }
 
         if (count == 0) return 0;
 
         int freq = 0;
-        for (int i = 0; i < nums.length; i++) if (nums[i] == element) freq++;
+        for (int num : nums) if (num == element) freq++;
 
         if (freq > nums.length / 2) return element;
         else return 0;
@@ -430,17 +425,10 @@ public class ArrayProblems {
 
     public int maxSubArraySumKadane(int[] nums) {
         int sum = 0, maxSum = Integer.MIN_VALUE;
-        int start = -1, subStart = -1, subEnd = -1;
 
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-
-            if (sum > maxSum) {
-                maxSum = sum;
-                subStart = start;
-                subEnd = i;
-            }
-
+        for (int num : nums) {
+            sum += num;
+            if (sum > maxSum) maxSum = sum;
             if (sum < 0) sum = 0;
         }
 
@@ -450,11 +438,11 @@ public class ArrayProblems {
     public int maxProfit(int[] prices) {
         int minBuy = prices[0];
         int profit = 0;
-        int checkProfit = 0;
-        for (int i = 0; i < prices.length; i++) {
-            checkProfit = prices[i] - minBuy;
+        int checkProfit;
+        for (int price : prices) {
+            checkProfit = price - minBuy;
             profit = Math.max(checkProfit, profit);
-            minBuy = Math.min(prices[i], minBuy);
+            minBuy = Math.min(price, minBuy);
         }
 
         return profit;
@@ -465,12 +453,12 @@ public class ArrayProblems {
         int[] neg = new int[nums.length / 2];
 
         int j = 0, k = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > 0) {
-                pos[k] = nums[i];
+        for (int num : nums) {
+            if (num > 0) {
+                pos[k] = num;
                 k++;
             } else {
-                neg[j] = nums[i];
+                neg[j] = num;
                 j++;
             }
         }
@@ -592,8 +580,6 @@ public class ArrayProblems {
         }
     }
 
-
-
     private void transpose(int[][] matrix) {
         int M = matrix.length;
         for (int i = 0; i < M; i++) {
@@ -631,5 +617,29 @@ public class ArrayProblems {
             }
         }
         return result;
+    }
+
+    public List<Integer> spiralOrder(int[][] matrix) {
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        List<Integer> list = new ArrayList<>(m * n);
+        int top = 0, bottom = m - 1, left = 0, right = n - 1;
+
+        while((m % 2 == 0 && bottom <= m / 2) || (m % 2 != 0 && top <= m / 2)) {
+            for (int c = left; c <  right; c++) list.add(matrix[top][c]);
+            for (int r = top; r <= bottom; r++) list.add(matrix[r][right]);
+            if (top == bottom) break;
+            for (int c = right - 1; c >= left; c--) list.add(matrix[bottom][c]);
+            for (int r = bottom - 1; r > top; r--) list.add(matrix[r][left]);
+
+            left++;
+            right--;
+            top++;
+            bottom--;
+        }
+
+        return list;
     }
 }

@@ -6,6 +6,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -372,5 +373,26 @@ class ArrayProblemsTests {
     void rotateImage(int[][] input, int[][] expected) {
         sut.rotateImage(input);
         assertArrayEquals(expected, input);
+    }
+
+    static Stream<Arguments> spiralOrderData() {
+        return Stream.of(
+                Arguments.of(
+                        new int[][] {{1,2,3},{4,5,6},{7,8,9}},
+                        List.of(1,2,3,6,9,8,7,4,5)
+                ),
+                Arguments.of(
+                        new int[][] {{1,2,3,4},{5,6,7,8},{9,10,11,12}},
+                        List.of(1,2,3,4,8,12,11,10,9,5,6,7)
+                )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("spiralOrderData")
+    void spiralOrder(int[][] matrix, List<Integer> expected) {
+        List<Integer> actual = sut.spiralOrder(matrix);
+        System.out.printf("Expected: %s, Actual: %s%n", expected, actual);
+        assertEquals(expected, actual);
     }
 }
