@@ -635,14 +635,10 @@ public class ArrayProblems {
             if (left == right) break;
             for (int r = bottom - 1; r > top; r--) list.add(matrix[r][left]);
 
-            if (list.size() == m * n) break;
-
             left++;
             right--;
             top++;
             bottom--;
-
-            if (right < 0 || left >= n || bottom < 0 || top >= m) break;
         }
 
         return list;
