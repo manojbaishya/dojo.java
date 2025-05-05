@@ -620,24 +620,29 @@ public class ArrayProblems {
     }
 
     public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> list = new ArrayList<>();
 
         int m = matrix.length;
         int n = matrix[0].length;
 
-        List<Integer> list = new ArrayList<>(m * n);
         int top = 0, bottom = m - 1, left = 0, right = n - 1;
 
-        while((m % 2 == 0 && bottom <= m / 2) || (m % 2 != 0 && top <= m / 2)) {
+        while(list.size() != m * n) {
             for (int c = left; c <  right; c++) list.add(matrix[top][c]);
             for (int r = top; r <= bottom; r++) list.add(matrix[r][right]);
             if (top == bottom) break;
             for (int c = right - 1; c >= left; c--) list.add(matrix[bottom][c]);
+            if (left == right) break;
             for (int r = bottom - 1; r > top; r--) list.add(matrix[r][left]);
+
+            if (list.size() == m * n) break;
 
             left++;
             right--;
             top++;
             bottom--;
+
+            if (right < 0 || left >= n || bottom < 0 || top >= m) break;
         }
 
         return list;
