@@ -13,6 +13,34 @@ Computer Science problems in Java.
 
 1. LLD of chess
 
+### Patterns
+
+1. Two Pointers
+2. Sliding Window
+3. Prefix Sums
+4. Merge Intervals
+5. Binary Search (and Variants)
+6. Sorting-Based Patterns
+7. Fast and Slow Pointers
+8. Backtracking & Recursive Search
+9. Divide and Conquer
+10. Linked List Techniques (Dummy Node, In-place Reversal)
+11. Stacks and Queues
+12. Monotonic Stack / Queue
+13. Expression Evaluation (Two Stacks)
+14. String Manipulation & Regular Expressions
+15. Hashmaps & Frequency Counting
+16. Binary Trees & BSTs (Traversal, Construction, Properties)
+17. Path Sum & Root-to-Leaf Techniques
+18. Kth Largest/Smallest Elements (Heaps / QuickSelect)
+19. Top K Frequent Elements
+20. Merge K Sorted Lists
+21. Dynamic Programming (Including Knapsack, Range DP, etc.)
+22. Greedy & Interval Partitioning
+23. Graph Traversals (BFS, DFS)
+24. Graph Algorithms (DAGs, MSTs, Shortest Paths, etc.)
+25. Design Problems (LRU Cache, Twitter, etc.)
+
 ## Question Bank
 
 **𝗔𝗿𝗿𝗮𝘆𝘀 𝗮𝗻𝗱 𝗦𝘁𝗿𝗶𝗻𝗴𝘀:**
@@ -266,34 +294,6 @@ Computer Science problems in Java.
     - Make locally optimal choices
     - Efficient for problems with optimal substructure
     - Covers tasks like activity selection, minimum coins
-
-### More patterns
-
-1. Two Pointers
-2. Sliding Window
-3. Prefix Sums
-4. Merge Intervals
-5. Binary Search (and Variants)
-6. Sorting-Based Patterns
-7. Fast and Slow Pointers
-8. Backtracking & Recursive Search
-9. Divide and Conquer
-10. Linked List Techniques (Dummy Node, In-place Reversal)
-11. Stacks and Queues
-12. Monotonic Stack / Queue
-13. Expression Evaluation (Two Stacks)
-14. String Manipulation & Regular Expressions
-15. Hashmaps & Frequency Counting
-16. Binary Trees & BSTs (Traversal, Construction, Properties)
-17. Path Sum & Root-to-Leaf Techniques
-18. Kth Largest/Smallest Elements (Heaps / QuickSelect)
-19. Top K Frequent Elements
-20. Merge K Sorted Lists
-21. Dynamic Programming (Including Knapsack, Range DP, etc.)
-22. Greedy & Interval Partitioning
-23. Graph Traversals (BFS, DFS)
-24. Graph Algorithms (DAGs, MSTs, Shortest Paths, etc.)
-25. Design Problems (LRU Cache, Twitter, etc.)
 
 ## Roadmap:
 

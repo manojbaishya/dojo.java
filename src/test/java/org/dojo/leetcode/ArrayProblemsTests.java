@@ -418,4 +418,18 @@ class ArrayProblemsTests {
         System.out.printf("Expected: %s, Actual: %s%n", expected, actual);
         assertEquals(expected, actual);
     }
+
+    static Stream<Arguments> subarraySumData() {
+        return Stream.of(
+                Arguments.of(new int[] {1, 1, 1}, 2, 2),
+                Arguments.of(new int[] {1, 2, 3}, 3, 2)
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("subarraySumData")
+    void subarraySum(int[] nums, int k, int expected) {
+        int actual = sut.subarraySum(nums, k);
+        System.out.printf("Expected: %d, Actual: %d%n", expected, actual);
+        assertEquals(expected, actual);
+    }
 }

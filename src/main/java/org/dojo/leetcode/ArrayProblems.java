@@ -627,8 +627,8 @@ public class ArrayProblems {
 
         int top = 0, bottom = m - 1, left = 0, right = n - 1;
 
-        while(list.size() != m * n) {
-            for (int c = left; c <  right; c++) list.add(matrix[top][c]);
+        while (list.size() != m * n) {
+            for (int c = left; c < right; c++) list.add(matrix[top][c]);
             for (int r = top; r <= bottom; r++) list.add(matrix[r][right]);
             if (top == bottom) break;
             for (int c = right - 1; c >= left; c--) list.add(matrix[bottom][c]);
@@ -642,5 +642,20 @@ public class ArrayProblems {
         }
 
         return list;
+    }
+
+    public int subarraySum(int[] nums, int k) {
+        int prefixSum = 0;
+        int count = 0;
+
+        Map<Integer, Integer> sums = new HashMap<>();
+        sums.put(prefixSum, 1);
+        for (int num : nums) {
+            prefixSum += num;
+            int prevSum = prefixSum - k;
+            if (sums.containsKey(prevSum)) count += sums.get(prevSum);
+            sums.merge(prefixSum, 1, Integer::sum);
+        }
+        return count;
     }
 }
