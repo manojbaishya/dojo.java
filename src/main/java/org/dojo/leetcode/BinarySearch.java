@@ -68,9 +68,9 @@ public class BinarySearch {
             if (SLMAX <= BRMIN && BLMAX <= SRMIN)
                 return isEven ? calculateMedian(SLMAX, BLMAX, SRMIN, BRMIN) : calculateMedian(SLMAX, BLMAX);
 
-            // Counter Clockwise rotation, take higher count of elements from S and
-            //      take lower count of elements from B to maintain Left Partition Size invariant and
-            //      to maintain sorted order of M
+                // Counter Clockwise rotation, take higher count of elements from S and
+                //      take lower count of elements from B to maintain Left Partition Size invariant and
+                //      to maintain sorted order of M
             else if (BLMAX > SRMIN) lowerBoundSLCount = testSLCount + 1;
                 // Clockwise rotation, take lower count of elements from S and
                 //      take higher count of elements from B to maintain Left Partition Size invariant
@@ -104,5 +104,61 @@ public class BinarySearch {
      */
     private static double calculateMedian(int SLMAX, int BLMAX) {
         return max(SLMAX, BLMAX);
+    }
+
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) return mid;
+            if (nums[mid] > target) right = mid - 1;
+            else left = mid + 1;
+        }
+        return -1;
+    }
+
+    public int searchInsert(int[] nums, int target) {
+        return searchLowerBound(nums, target);
+    }
+
+    public int[] searchRange(int[] nums, int target) {
+        int lb = searchLowerBound(nums, target);
+        int ub = searchUpperBound(nums, target);
+
+        if (lb == nums.length || nums[lb] != target) return new int[] {-1, -1};
+
+        return new int[] {lb, ub - 1};
+    }
+
+    public int searchLowerBound(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        int lb = nums.length;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] >= target) {
+                lb = mid;
+                right = mid - 1;
+            } else left = mid + 1;
+        }
+
+        return lb;
+    }
+
+    public int searchUpperBound(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        int ub = nums.length;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (nums[mid] > target) {
+                ub = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ub;
     }
 }

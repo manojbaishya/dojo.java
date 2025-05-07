@@ -26,7 +26,6 @@ class BinarySearchTests {
                 )
         );
     }
-
     @ParameterizedTest
     @MethodSource("findMedianSortedArraysData")
     void testFindMedianSortedArrays(int[] inputArr1, int[] inputArr2, double expectedMedian) {
