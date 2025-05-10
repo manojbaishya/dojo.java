@@ -83,24 +83,24 @@ public class LinkedListProblems {
         if (list1 == null) return list2;
         else if (list2 == null) return list1;
 
-        SinglyLinkedListNode l1 = list1, l2 = list2;
-        SinglyLinkedListNode result = list1.getVal() <= l2.getVal() ? list1 : l2;
-        SinglyLinkedListNode tmp = l1.getVal() > l2.getVal() ? l2 : l1;
-        while (l1 != null) {
-            if (l1.getVal() > l2.getVal()) {
-                tmp = l1;
-                l1 = l2;
-                l2 = tmp;
-            }
-            while (l1.getVal() <= l2.getVal()) {
-                tmp = l1;
-                l1 = l1.getNext();
+        SinglyLinkedListNode result = list1.getVal() <= list2.getVal() ? list1 : list2;
 
-                if (l1 == null) break;
+        SinglyLinkedListNode smaller = list1, larger = list2;
+        SinglyLinkedListNode tmp = null;
+        while (smaller != null) {
+            if (smaller.getVal() > larger.getVal()) {
+                tmp = smaller;
+                smaller = larger;
+                larger = tmp;
             }
-            tmp.setNext(l2);
+            while (smaller.getVal() <= larger.getVal()) {
+                tmp = smaller;
+                smaller = smaller.getNext();
+
+                if (smaller == null) break;
+            }
+            tmp.setNext(larger);
         }
-
         return result;
     }
 
@@ -130,5 +130,63 @@ public class LinkedListProblems {
     public void deleteNode(ListNode node) {
         node.val = node.next.val;
         node.next = node.next.next;
+    }
+
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        int sizeA = 0;
+        ListNode sA = headA;
+        while (sA.next != null) {
+            sA = sA.next;
+            sizeA++;
+        }
+
+        int sizeB = 0;
+        ListNode sB = headB;
+        while (sB.next != null) {
+            sB = sB.next;
+            sizeB++;
+        }
+
+        ListNode longer;
+        int delta;
+        if (sizeA > sizeB) {
+            delta = sizeA - sizeB;
+            longer = headA;
+        } else {
+            delta = sizeB - sizeA;
+            longer = headB;
+        }
+
+        sA = headA;
+        sB = headB;
+
+        if (longer == headA) {
+            for (int i = 0; i < delta; i++) {
+                sA = sA.next;
+            }
+        } else {
+            for (int i = 0; i < delta; i++) {
+                sB = sB.next;
+            }
+        }
+
+        while (sA != null && sB != null) {
+            if (sA == sB) return sA;
+
+            sA = sA.next;
+            sB = sB.next;
+        }
+
+        return null;
+    }
+
+    public boolean hasCycle(ListNode head) {
+        ListNode slow = head, fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return true;
+        }
+        return false;
     }
 }

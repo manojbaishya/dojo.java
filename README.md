@@ -59,10 +59,10 @@ Computer Science problems in Java.
 
 **𝗟𝗶𝗻𝗸𝗲𝗱 𝗟𝗶𝘀𝘁𝘀:**
 
-1. Reverse a linked list.
+1. Reverse a linked list. ✅
 2. Detect a cycle in a linked list.
-3. Find the middle of a linked list.
-4. Merge two sorted linked lists.
+3. Find the middle of a linked list. ✅
+4. Merge two sorted linked lists. ✅
 5. Implement a stack using linked list.
 6. Find the intersection point of two linked lists.
 
