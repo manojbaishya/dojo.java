@@ -1,5 +1,11 @@
 Computer Science problems in Java.
 
+### Topics covered
+1. LinkedList
+   1. Fast and Slow Pointer
+      1. Midpoint of LinkedList
+      2. Nth element removal from the end of the list
+
 ## Backlog
 
 ### Problems
@@ -8,10 +14,6 @@ Computer Science problems in Java.
    only the characters of S2.
 2. You have N cars numbered from 1 to N. Car 1 is open and all the other cars are closed. Each car has a list of keys
    where key i can open the car i. Find out if we can open all the cars.
-
-### Design
-
-1. LLD of chess
 
 ### Patterns
 
@@ -475,3 +477,90 @@ Computer Science problems in Java.
 * Batch framework for Java — https://github.com/j-easy/easy-batch
 * Object-functional extension for Java — https://github.com/vavr-io/vavr
 * Java binary serialization and cloning — https://github.com/EsotericSoftware/kryo
+
+### Design
+
+1. LLD of chess
+
+
+### System Design Problems
+
+#### Basics
+
+1. Design a chess game
+2. Design a simple URL shortening service.
+3. Design a basic chat application.
+4. Design a file storage system.
+5. Design a simple social media platform.
+6. Design a simple search engine.
+7. Design a simple e-commerce website.
+8. Design a basic ride-sharing system.
+9. Design a basic video streaming service.
+10. Design a simple recommendation system.
+11. Design a basic food delivery app.
+12. Design a parking lot management system.
+13. Design a simple music streaming service.
+14. Design a basic online ticket booking system.
+15. Design a simple note-taking application.
+16. Design a weather forecasting system.
+17. Design a basic email service.
+18. Design a file synchronization system.
+19. Design a simple calendar application.
+20. Design a basic online quiz platform.
+21. Design a user authentication system.
+
+#### Advanced
+
+1. Design a URL-shortening service like bit.ly.
+2. Design a distributed key-value store like Redis.
+3. Design a scalable social network like Facebook.
+4. Design a scalable recommendation system like Netflix.
+5. Design a distributed file system like Hadoop's HDFS.
+6. Design a real-time messaging system like WhatsApp.
+7. Design a web crawler like Google.
+8. Design a distributed cache like Memcached.
+9. Design a content delivery network (CDN) like Cloudflare.
+10. Design a scalable search engine like Google.
+11. Design a ride-sharing system like Uber.
+12. Design a video streaming service like YouTube.
+13. Design an online food delivery system like Zomato.
+14. Design a collaborative document editing system like Google Docs.
+15. Design an e-commerce platform like Amazon.
+16. Design a recommendation system for an online marketplace.
+17. Design a fault-tolerant distributed database system.
+18. Design a scalable event-driven system like Twitter.
+19. Design a scalable photo-sharing platform like Instagram.
+20. Design a distributed task scheduling system.
+
+### Design Patterns
+
+#### Creational patterns
+These patterns provide various object creation mechanisms, which increase the flexibility and reuse of existing code.
+
+1. Factory Method
+2. Abstract Factory
+3. Builder
+4. Prototype
+5. Singleton
+
+
+#### Structural patterns
+These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.
+
+1. Adapter
+2. Bridge
+3. Composite
+4. Decorator
+5. Facade
+6. Flyweight
+7. Proxy
+
+#### Behavioral patterns
+These patterns are concerned with algorithms and the assignment of responsibilities between objects.
+
+1. Chain of Responsibility
+2. Command
+3. Iterator
+4. Mediator
+5. Memento
+6. Observer

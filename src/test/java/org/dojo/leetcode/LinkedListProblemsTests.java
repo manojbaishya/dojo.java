@@ -1,5 +1,6 @@
 package org.dojo.leetcode;
 
+import org.dojo.leetcode.LinkedListProblems.ListNode;
 import org.dojo.leetcode.SinglyLinkedList.SinglyLinkedListNode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -8,6 +9,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class LinkedListProblemsTests {
     private final LinkedListProblems sut = new LinkedListProblems();
@@ -73,5 +76,75 @@ class LinkedListProblemsTests {
             expected = expected.getNext();
             actual = actual.getNext();
         }
+    }
+
+    private static ListNode linkedListNodeFromArray(int[] arr) {
+        if (arr == null || arr.length == 0) return null;
+
+        ListNode head = new ListNode(arr[0]);
+        ListNode current = head;
+
+        for (int i = 1; i < arr.length; i++) {
+            ListNode newNode = new ListNode(arr[i]);
+            current.next = newNode;
+            current = newNode;
+        }
+
+        return head;
+    }
+
+    private static Stream<Arguments> removeNthFromEndTestData() {
+        return Stream.of(
+                Arguments.of(
+                        linkedListNodeFromArray(new int[] {1, 2, 3, 4, 5}),
+                        2,
+                        linkedListNodeFromArray(new int[] {1, 2, 3, 5})
+                ),
+
+                Arguments.of(
+                        linkedListNodeFromArray(new int[] {1}),
+                        1,
+                        null
+                ),
+
+                Arguments.of(
+                        linkedListNodeFromArray(new int[] {1, 2}),
+                        1,
+                        linkedListNodeFromArray(new int[] {1})
+                ),
+
+                Arguments.of(
+                        linkedListNodeFromArray(new int[] {1, 2, 3}),
+                        3,
+                        linkedListNodeFromArray(new int[] {2, 3})
+                ),
+
+                Arguments.of(
+                        linkedListNodeFromArray(new int[] {1, 2, 3, 4, 5, 6}),
+                        3,
+                        linkedListNodeFromArray(new int[] {1, 2, 3, 5, 6})
+                )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("removeNthFromEndTestData")
+    void removeNthFromEnd(ListNode head, int n, ListNode expectedList) {
+        ListNode actual = sut.removeNthFromEnd(head, n);
+
+        if (expectedList == null) {
+            assertNull(actual);
+            return;
+        }
+
+        ListNode expected = expectedList;
+        while (expected != null) {
+            assertNotNull(actual, "Actual list is shorter than expected");
+            assertEquals(expected.val, actual.val);
+            expected = expected.next;
+            actual = actual.next;
+        }
+
+        assertNull(actual, "Actual list is longer than expected");
     }
 }

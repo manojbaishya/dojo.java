@@ -3,6 +3,17 @@ package org.dojo.leetcode;
 import static org.dojo.leetcode.SinglyLinkedList.SinglyLinkedListNode;
 
 public class LinkedListProblems {
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() { }
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
     public SinglyLinkedListNode addTwoNumbers(SinglyLinkedListNode l1, SinglyLinkedListNode l2) {
         var carryover = 0;
         var sumNode = new SinglyLinkedListNode();
@@ -91,5 +102,33 @@ public class LinkedListProblems {
         }
 
         return result;
+    }
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode slow = head, fast = head;
+
+        int count = 1;
+        for (int i = 0; i < n; i++) {
+            if (fast.next == null) break;
+
+            fast = fast.next;
+            count++;
+        }
+        if (count == n) return head.next;
+
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+
+        slow.next = slow.next.next;
+
+        return head;
+    }
+
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 }
