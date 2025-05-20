@@ -1,10 +1,21 @@
 Computer Science problems in Java.
 
+### Master List
+
+1. Grind 75 – A curated LeetCode problem list that encompasses common interview topics: https://lnkd.in/gM_en6dQ (
+   grind75.com for more)
+2. NeetCode – For crystal clear explanations of LeetCode solutions: https://lnkd.in/gcKGJP3f
+3. Hello Interview – AI-guided system design mock interviews (website + YouTube): https://lnkd.in/gw4k4rau
+4. interviewing.io System Design Guide – Especially the first three sections, packed with fun
+   analogies: https://lnkd.in/g9MKnE85
+5. Exponent – A platform for peer-to-peer mock interviews: https://lnkd.in/gunUpv3y
+
 ### Topics covered
+
 1. LinkedList
-   1. Fast and Slow Pointer
-      1. Midpoint of LinkedList
-      2. Nth element removal from the end of the list
+    1. Fast and Slow Pointer
+        1. Midpoint of LinkedList
+        2. Nth element removal from the end of the list
 
 ## Backlog
 
@@ -482,7 +493,6 @@ Computer Science problems in Java.
 
 1. LLD of chess
 
-
 ### System Design Problems
 
 #### Basics
@@ -535,6 +545,7 @@ Computer Science problems in Java.
 ### Design Patterns
 
 #### Creational patterns
+
 These patterns provide various object creation mechanisms, which increase the flexibility and reuse of existing code.
 
 1. Factory Method
@@ -543,9 +554,10 @@ These patterns provide various object creation mechanisms, which increase the fl
 4. Prototype
 5. Singleton
 
-
 #### Structural patterns
-These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.
+
+These patterns explain how to assemble objects and classes into larger structures while keeping these structures
+flexible and efficient.
 
 1. Adapter
 2. Bridge
@@ -556,6 +568,7 @@ These patterns explain how to assemble objects and classes into larger structure
 7. Proxy
 
 #### Behavioral patterns
+
 These patterns are concerned with algorithms and the assignment of responsibilities between objects.
 
 1. Chain of Responsibility
@@ -564,3 +577,131 @@ These patterns are concerned with algorithms and the assignment of responsibilit
 4. Mediator
 5. Memento
 6. Observer
+
+
+## AI Workflow
+
+Model: GPT-4o, o3-mini-high
+
+### Summarize Topics, Patterns & Similar Questions
+```
+Please explain LeetCode question [ID], including its solution and complexity. Also, specify which topics and patterns it belongs to and suggest similar questions.
+
+Please show a Step-by-Step Walkthrough with this example input: 
+{Your example input}
+
+You should show the value of each variable in each step and summarized it as a table.
+```
+
+### Make Minimal Changes to Fix Your Broken Solution (If you can brainstorm a whiteboard and write a solution)
+
+Do not attempt solutions for hard problems right away — too much time will be spent.
+Brainstorm solvable problems. 
+
+Template to ask if failed:
+```
+Here is my solution to LeetCode question {ID}, but it doesn't pass all test cases.
+Please modify the minimal number of lines to make it work and explain why.
+
+{Your solution}
+
+Below are the test cases it failed:
+
+{Failed test cases}.
+```
+
+### Step-by-Step Code Execution & Explanation
+Execute the code on a test case data and explain each execution step by step.
+
+```
+Please show a Step-by-Step Walkthrough with this example input: 
+{Your example input}
+
+You should show the value of each variable in each step and summarized it as a table.
+```
+
+
+### Learn About Topics and Patterns
+
+```
+The next topic is {topic_name}. please tell me about the 
+
+1. core ideas and the keys(or steps) to solve this kinds of Leetcode problem
+2. please summarize and create a table including
+    1. Category: the type of Leetcode problem
+    2. Description: explain the pattern
+    3. Priority: high, medium, or low based on whether it’s important for interview preparation
+    4. Why: explain the reason for the priority
+    5. Representative questions: 2 or 3 representative questions
+
+```
+
+### Specific Pattern
+
+```
+Let’s talk about the pattern of {PATTERN} from the topic of the {TOPIC},  Based on the questions you recommended, compare and explain 2 or 3 questions to help me
+
+1. Understand this pattern well
+2. Easier to identify these pattern
+3. Understand the templates to solve these problems
+
+Please give me the following output
+
+1. The basic idea of this pattern and how to identify this pattern
+2. a summary table comparing representative leetcode question
+3. code templates and their counterpart leetcode questions (at least two questions)
+4. then go to the details of each question. While explaining each question, please
+    1. give all details about the question description
+    2. in terms of solution, focus on the goal to learn the pattern, ignore details that are too specific
+```
+
+Example:
+
+![img_1.png](img_1.png)
+
+### Compare Similar Questions and Summarize Code Templates
+
+For example:
+
+![img.png](img.png)
+
+### OpenAI API
+
+```
+ template = """Please explain the LeetCode question: {question_title}.
+
+    Your output should include the following headers:
+    - **Problem Description**
+        - Input & Output
+        - Examples
+    - **Topics and Patterns**
+    - **Solution & Complexity**
+        - Key Ideas
+        - **Java Solution**
+            - Code
+            - Explanation
+            - Step-by-Step Walkthrough (summarized as a table)
+        - Detailed Complexity Analysis
+    - **Similar Questions** (including question title, difficulty, description, and why it is similar—organized in a table)
+
+    (Please avoid opening and closing remarks; the more detailed, the better.)"""
+```
+
+## Learning DSA
+
+TRICK TO LEARN DSA FASTER!!!
+As promised, here is a post on DSA prep.
+As mentioned before, follow neetcode.io for intuition building and category by category prep. He became famous organically due to how good he is with whiteboarding. This is not sponsored( I am not a creator )
+Now I can ask you to grind day and night, but like every exam, DSA has tricks to build intuition faster like CAT or JEE:
+Base rules of DSA and human psychology:
+1. Never jump from category to category and solve random problems - your brain will never form a pattern in chaos.
+2. Never ever attempt the first problem on your own from any given category - just knowing how linked list works is not enough data for your mind to solve a tricky linked list problem, just like how knowing permutation formula is not enough to solve a HOTs permutation problem from NCERT. You will jeopardize your confidence and have no interest further to learn.
+Best practice/trick:
+Step 1: Let us go to any given category, say Graphs. DO NOT attempt the first problem on your own. Watch neetcode solve first 5 or 6 questions till your mind has a grasp of what graph based problems and solutions look like. Observation before jumping into it is key.
+Step 2: Now that your mind has gotten a feel of the pattern, come to 7th question for example and just attempt the approach. DO NOT CODE. verify if your intuition aligns with neetcode. Do that for next few problems till you feel somewhat confident that you are able to do it.
+Step 3: Rewrite all the 10 problems you have watched videos of so far, yourself, since you know the solutions already.
+Step 4: once you are done with previous 3 steps, go to problem number 11 and attempt this completely on your own, from intuition to code and verify. You will make some mistakes but that is ok, you are close, keep going! Keep doing this for every category till you feel confident in each of them.
+Step 5: Great! you feel like you can do this! revise all the problems you have done in all categories.
+Step 6: Start solving one completely new problem per day to see if you are able to put it in a category and then find the right solution. Do this till you feel somewhat confident to give interviews.
+This method is a lot faster than the traditional "Work hard till you figure it out" method. Also, not to mention, the number of problems a person needs to build pattern varies from person to person, so the numbers I have mentioned are averge numbers.
+Try this for atleast one category and let me know how it works out in DMs! Works best on following categories: Graphs, Trees, Heaps, Tries, Intervals, Stacks, Sliding window, Linked list. Rest of them need more number of problems and practice.

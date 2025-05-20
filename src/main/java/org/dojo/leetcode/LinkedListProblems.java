@@ -1,5 +1,8 @@
 package org.dojo.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.dojo.leetcode.SinglyLinkedList.SinglyLinkedListNode;
 
 public class LinkedListProblems {
@@ -12,6 +15,16 @@ public class LinkedListProblems {
             this.val = val;
             this.next = next;
         }
+    }
+
+    public static List<Integer> listNodeToList(ListNode node) {
+        ListNode ptr = node;
+        List<Integer> result = new ArrayList<>();
+        while (ptr != null) {
+            result.add(ptr.val);
+            ptr = ptr.next;
+        }
+        return result;
     }
 
     public SinglyLinkedListNode addTwoNumbers(SinglyLinkedListNode l1, SinglyLinkedListNode l2) {
@@ -189,4 +202,39 @@ public class LinkedListProblems {
         }
         return false;
     }
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = null;
+        ListNode next;
+
+        ListNode result = head;
+
+        int size = 0;
+        ListNode start = head;
+        while (start != null) {
+            start = start.next;
+            size++;
+        }
+
+        int groups = size / k;
+
+        for (int i = 0; i < groups; i++) {
+            if (i > 0) {
+                dummy.next = head.next;
+                dummy = head;
+                head = head.next;
+                next = head;
+            }
+
+            for (int j = 0; j < k; j++) {
+                next = head.next;
+                head.next = dummy;
+                dummy = head;
+                head = next;
+            }
+        }
+        return result;
+    }
+
+
 }
