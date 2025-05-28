@@ -655,15 +655,7 @@ Please give me the following output
     2. in terms of solution, focus on the goal to learn the pattern, ignore details that are too specific
 ```
 
-Example:
-
-![img_1.png](img_1.png)
-
 ### Compare Similar Questions and Summarize Code Templates
-
-For example:
-
-![img.png](img.png)
 
 ### OpenAI API
 

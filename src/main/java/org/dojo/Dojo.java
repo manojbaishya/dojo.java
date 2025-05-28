@@ -1,6 +1,7 @@
 package org.dojo;
 
-import org.dojo.leetcode.EasyProblemsProfiler;
+import org.dojo.algorithms.EasyProblemsProfiler;
+import org.dojo.util.Benchmarks;
 
 import java.io.IOException;
 
