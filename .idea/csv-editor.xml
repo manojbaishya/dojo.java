@@ -3,7 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/src/test/resources/org/dojo/leetcode/SlidingWindowTests/minWindowData.csv">
+        <entry key="/src/test/resources/org/dojo/algorithms/SlidingWindowTests/minWindowData.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

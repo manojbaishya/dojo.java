@@ -195,12 +195,38 @@ public class LinkedListProblems {
 
     public boolean hasCycle(ListNode head) {
         ListNode slow = head, fast = head;
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) return true;
         }
         return false;
+    }
+
+    public ListNode getNodeIfHasCycle(ListNode head) {
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return fast;
+        }
+        return null;
+    }
+
+    public ListNode detectCycle(ListNode head) {
+        if (head == null) return null;
+        ListNode fast = getNodeIfHasCycle(head);
+        if (fast == null) return null;
+
+        ListNode slow = head;
+        ListNode prev = fast;
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        prev.next = null;
+        return slow;
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {

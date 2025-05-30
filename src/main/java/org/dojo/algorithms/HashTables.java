@@ -22,4 +22,13 @@ public class HashTables {
         }
         return new int[] {};
     }
+
+    public int[] twoSumAlt(int[] nums, int target) {
+        Map<Integer, Integer> lookbehind = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (lookbehind.containsKey(target - nums[i])) return new int[] {lookbehind.get(target - nums[i]), i};
+            lookbehind.put(nums[i], i);
+        }
+        return new int[] {};
+    }
 }
