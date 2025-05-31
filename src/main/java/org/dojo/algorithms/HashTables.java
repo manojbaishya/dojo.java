@@ -1,6 +1,10 @@
 package org.dojo.algorithms;
 
+import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -30,5 +34,15 @@ public class HashTables {
             lookbehind.put(nums[i], i);
         }
         return new int[] {};
+    }
+
+    public List<Pair<Integer, Integer>> twoSumAlt2(int[] nums, int target) {
+        List<Pair<Integer, Integer>> pairs = new ArrayList<>();
+        Map<Integer, Integer> lookbehind = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (lookbehind.containsKey(target - nums[i])) pairs.add(Pair.of(lookbehind.get(target - nums[i]), i));
+            lookbehind.put(nums[i], i);
+        }
+        return pairs;
     }
 }
